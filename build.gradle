@@ -7,7 +7,7 @@ plugins {
     id 'maven-publish'
     id "com.jfrog.bintray" version "1.6"
     id 'jacoco'
-    id 'com.github.kt3k.coveralls' version '2.6.3'
+    id 'com.github.kt3k.coveralls' version '2.8.2'
 }
 
 project.description = 'Office Temperature'
@@ -21,12 +21,12 @@ repositories {
 }
 
 dependencies {
-    compile files('lib/SHT21-1.0.2-SNAPSHOT.jar')
-    compile 'org.apache.logging.log4j:log4j-api:2.1'
-    compile 'org.apache.logging.log4j:log4j-core:2.1'
+    compile files('lib/sht21-core-1.0.2.jar')
+    compile 'org.apache.logging.log4j:log4j-api:2.9.1'
+    compile 'org.apache.logging.log4j:log4j-core:2.9.1'
     compile 'args4j:args4j:2.33'
     compile 'org.apache.httpcomponents:httpclient:4.5.2'
-    compile 'com.pi4j:pi4j-core:0.0.5'
+    compile 'com.pi4j:pi4j-core:1.1'
     testCompile 'junit:junit:4.12'
     testCompile 'org.mockito:mockito-all:1.10.19'
 }
@@ -62,15 +62,15 @@ def pomConfig = {
     licenses {
         license {
             name "The MIT License (MIT)"
-            url "https://github.com/stefanfreitag/officeTemperature/blob/master/LICENSE"
+            url "https://github.com/stefanfreitag/golemOfficeTemperature/blob/master/LICENSE"
             distribution "repo"
         }
     }
 
     scm {
-        connection 'scm:git:https://github.com/stefanfreitag/officeTemperature/'
-        developerConnection 'scm:git:https://github.com/stefanfreitag/officeTemperature/'
-        url 'https://github.com/stefanfreitag/officeTemperature/'
+        connection 'scm:git:https://github.com/stefanfreitag/golemOfficeTemperature/'
+        developerConnection 'scm:git:https://github.com/stefanfreitag/golemOfficeTemperature/'
+        url 'https://github.com/stefanfreitag/golemOfficeTemperature/'
     }
     developers {
         developer {
@@ -120,9 +120,9 @@ bintray {
         repo = 'maven'
         name = 'officeTemperature'
         desc = 'Application to particiate in Golem.de Mitmachprojekt "Wie warm ist es in euren Büros?"'
-        websiteUrl = 'https://github.com/stefanfreitag/officeTemperature'
-        issueTrackerUrl = 'https://github.com/stefanfreitag/officeTemperature/issues'
-        vcsUrl = 'git://github.com/stefanfreitag/officeTemperature.git'
+        websiteUrl = 'https://github.com/stefanfreitag/golemOfficeTemperature'
+        issueTrackerUrl = 'https://github.com/stefanfreitag/golemOfficeTemperature/issues'
+        vcsUrl = 'git://github.com/stefanfreitag/golemOfficeTemperature.git'
         licenses = ['MIT']
         labels = ['Golem.de', 'Temperature', 'Office', 'Mitmachprojekt']
         publicDownloadNumbers = true
